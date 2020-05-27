@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+<br/>
+
+<!--Includer-->
+
+<div> Defined in header <span  class='includer'> &lt;{{page.includer}}&gt; </span>
+
+<!--<ul style="list-style-type:none;">-->
+<!--{% for entity in page.overloads %}-->
+<!--<li> <span class='signature'> {% highlight c++ %}  {{entity[0]}} ({{forloop.index}}) {% endhighlight %}       </span>-->
+<!--{% endfor %} -->
+<!--</ul>-->
+
+<table class='signature-table' >
+{% for entity in page.overloads %}
+    <tr>
+     <td> {{forloop.index}} </td>
+     <td><span class='signature'>{{- entity[0] | link_and_highlight: site.data.highlighted_types, page.namespaces -}}</span></td>
+     <!--<td> [Source] </td>-->
+    </tr>
+{% endfor %}
+</table>
+
+ <!-- Description of the function -->
+
+
+ {{page.brief |markdownify}}
+
+ {{page.desc |markdownify}}
+
+
+ <!--Description of each overload-->
+<ol>
+{% for entity in page.overloads %}
+ {%- if entity[1].desc != "" -%}
+<li>
+ {%- if entity[1].deprecated -%}[DEPRECATED]{%- endif -%}
+ {{entity[1].desc| markdownify}}
+ {%- endif -%}
+{% endfor %}
+</ol>
+
+ <!-- Template parameters  FIXME : FACTORIZE-->
+ {% if page.tparams.size != 0 %}
+<h5> Template parameters</h5>
+
+<table class='tparam-table' >
+ {% for param in page.tparams%}
+  {% if param[1] != "__SKIP__" %}
+    <tr>
+     <td class="param-name" valign="top" align="left"> {{param[0]}} </td>
+     <td class="param-value"> {{param[1] |markdownify | remove: '<p>' | remove: '</p>'	}} </td>
+    </tr>
+   {% endif %}
+ {% endfor %}
+</table>
+{% endif %}
+
+ <!--Parameters -->
+{% if page.params.size != 0 %}
+<h5> Parameters</h5>
+
+<table class='param-table' >
+ {% for param in page.params%}
+    <tr>
+     <td class="param-name" valign="top" align="left"> {{param[0]}} </td>
+     <td class="param-value"> {{param[1] |markdownify | remove: '<p>' | remove: '</p>'	}} </td>
+    </tr>
+ {% endfor %}
+</table>
+{% endif %}
+
+ <!-- Return -->
+
+{% if page.return_value %}
+<h5> Return value</h5>
+{{page.return_value}}
+{% endif %}
+
+ <!-- Example -->
+
+ <h5> Example </h5>
+
+{{page.example.desc | markdownify}}
+
+<div>
+{{page.example.code | link_and_highlight: site.data.highlighted_types}}
+</div>
+
+ <!-- See Also links -->
+
+<h5> See also </h5>
+<table class='table-seealso' >
+ {%- for sa in page.see-also -%}
+    <tr>
+     <td class="" align="right"> <a href="{{sa[0] |replace: "::", "/"}}.html"> {{sa[0]}} </a> </td>
+     <td > <b>-</b> </td>
+     <td class=""> {{sa[1] |markdownify }} </td>
+    </tr>
+ {%- endfor -%}
+</table>
+
+
+{{ content }}
+{% cpp2doc_register_images_generated_by_parser %}
+
