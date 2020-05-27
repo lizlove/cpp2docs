@@ -84,3 +84,8 @@ exclude:
   - README.md
   - code_snippets/
   - src/ #TODO: Can I exempt this?
+
+# Google Analytics Tracking
+# e.g, UA-1234567-89
+# TODO: ADD GA TRACKING
+# ga_tracking: UA-2709176-10
