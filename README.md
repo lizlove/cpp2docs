@@ -54,8 +54,13 @@ Consult the Jekyll [Troubleshooting Guide](https://jekyllrb.com/docs/troubleshoo
 jekyll build
 ```
 
-2. Currently deploys to Github pages using the Github Actions pipeline.
-<!-- TODO: Add CI pipeline with project. -->
+2. Deploying From Your Terminal
+
+You can deploy your new Jekyll project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
+
+```shell
+$ vercel
+```
 
 ## Built With
 
