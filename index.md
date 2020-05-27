@@ -71,7 +71,7 @@ If you're hosting your site on GitHub Pages, [set up GitHub Pages and Jekyll loc
 
 ### Compile from Source
 
-- [See configuration options]({{ site.baseurl }}{% link docs/design/configuration.md %})
+- [See configuration options]({{ site.baseurl }})
 
 ---
 
