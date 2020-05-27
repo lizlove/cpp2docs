@@ -13,23 +13,27 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
+title: TRIQS
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  TRIQS (Toolbox for Research on Interacting Quantum Systems) is a set of C++
+  and Python libraries for the study of interacting quantum systems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  lizlove
 permalink: pretty
 
 # Build settings
 markdown: kramdown
-theme: minima
+kramdown:
+  input: ERBKramdown
+  math_engine: katex
+  math_engine_opts: {} # TODO: Can we remove this empty object?
 plugins:
-  - jekyll-feed
+  - jekyll-feed # TODO: Remove?
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-katex
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -42,3 +46,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# exclude:
+#   - sandbox/
+#   - LICENSE.txt
+#   - README.md
+#   - code_snippets/
