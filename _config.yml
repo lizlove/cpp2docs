@@ -5,10 +5,9 @@ email: oparcollet@flatironinstitute.org
 
 # Build Settings
 kramdown:
-  input: ERBKramdown
-  #nFM
-#   math_engine: katex
-#   math_engine_opts: {}
+  input: ERBKramdown #nFM
+  math_engine: katex
+  math_engine_opts: {}
 
 exclude:
   [
