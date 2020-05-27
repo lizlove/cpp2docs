@@ -1,7 +1,7 @@
 ---
 title: Community
 nav_order: 2
-permalink: /community
+permalink: /community/
 ---
 
 # Community
