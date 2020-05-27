@@ -78,8 +78,9 @@ search_tokenizer_separator: /[\s/]+/
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# exclude:
-#   - sandbox/
-#   - LICENSE.txt
-#   - README.md
-#   - code_snippets/
+exclude:
+  - sandbox/
+  - LICENSE.txt
+  - README.md
+  - code_snippets/
+  - src/ #TODO: Can I exempt this?
