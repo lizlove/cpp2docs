@@ -5,7 +5,8 @@ email: oparcollet@flatironinstitute.org
 
 # Build Settings
 kramdown:
-  input: ERBKramdown #nFM
+  input: ERBKramdown
+  #nFM
 #   math_engine: katex
 #   math_engine_opts: {}
 
@@ -58,9 +59,9 @@ footer_content: 'Copyright &copy; 2020 Flatiron Institute. Distributed by an <a 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  # - jekyll-include-cache
+  - jekyll-include-cache
   - jekyll-katex
-    #incremental: true
+  - incremental: true
 
 defaults:
   - scope:
